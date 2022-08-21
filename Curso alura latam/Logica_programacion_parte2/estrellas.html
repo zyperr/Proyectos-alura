@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function jump(){
+            document.write("<br>")
+        }
+        function print(sentence){
+            document.write(sentence);
+            jump();
+        }
+        for(var lineas = 1;lineas <= 10;lineas++){
+            for(var columnas = 1;columnas<= 20;columnas++){
+                document.write("*");
+            }
+            jump();
+        }
+        jump();
+        print("fin");
+        // Si se quiere imprimir un asterisco para poder replicar esos 30 asteriscos, 10 en cada línea y uno en cada columna. Tener una tabla de 3 x 10 en este caso. ¿Cómo puedo hacer eso? Esose puede realizar haciendo loop anidados o repeticiones anidadas como se las conoce.
+    </script>
+</body>
+</html>

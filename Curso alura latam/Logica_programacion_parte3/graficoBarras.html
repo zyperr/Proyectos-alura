@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flor con canvas</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var colores = ["blue","green","yellow","red","gray"]; // creamos una array con colores
+        var serie2009 = [6, 47, 41, 3, 3]; // creamos un array para la serie 2009 y sus respectivos porcentajes
+        var serie2019 = [81, 9, 3, 3, 4]; // creamos un array para la serie 2019 y sus respectivos porcentajes
+
+
+        function dibujarRectangulo(x, y, base, altura, color) { // definimos parametros para dibujarRectangulo
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle=color;
+        pincel.fillRect(x,y, base, altura);
+        pincel.strokeStyle="black";
+        pincel.strokeRect(x,y, base, altura);
+    }
+
+    function escribirTexto(x , y, texto) { //definimos parametros para escribir texto
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.font="15px Georgia";
+        pincel.fillStyle="black";
+        pincel.fillText(texto, x, y);    
+    }
+    function dibujarBarra(x, y, serie, colores, texto) {
+        escribirTexto(x,y-20,texto);
+        var contador2 = 0; // igualamos contador 2 a 0
+        for(var contador=0;contador < serie.length; contador++){ // creamos una variable contador y la igualamos a cerro despues hacemos que contador sea menor al rango del array y le sumamos 1 contador
+            var altura = serie[contador]; // igualamos la variable altura para que el valor de serie valla en acuerdo con el numero de serie del array
+            dibujarRectangulo(x,y+contador2,50,altura,colores[contador]); // llamamos a la funcion dibujar rectangulo y le asignamos los parametros x,y+contador2,50,altura y colores le definimos la variable contador que va a ser el largo del array colores. por la iteracion del bucle for
+            contador2 = contador2+altura // le asignamos a contador2 que sea una suma con la altura que en este caso es el largo deel array que va a tener contador por la iteracion del bucle for.
+            
+        }
+}
+    dibujarBarra(400,200,serie2009,colores,"2009");
+    dibujarBarra(500,200,serie2019,colores,"2019");
+    </script>
+</body>
+</html>

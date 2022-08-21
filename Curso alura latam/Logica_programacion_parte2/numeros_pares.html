@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Numeros pares del 1 al 100 con for</h1>
+    <script>
+        function jump(){
+            document.write("<br><hr><br>")
+        }
+        function print(sentence){
+            document.write(sentence);
+            jump();
+        }
+        var numeroPar = 2;
+        var numeroLimite = 100;
+        while(numeroPar <= numeroLimite){
+            if(numeroPar%2==0){
+                print("El numero "+ numeroPar+" es par");
+            }
+            numeroPar++;
+        }
+        print("FIN");
+    </script>
+</body>
+</html> 

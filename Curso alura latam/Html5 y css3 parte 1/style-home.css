@@ -1,0 +1,64 @@
+
+/*
+Todas las etiquetas p son seleccionadas y alineadas al centros
+Una buena practica de programacio nes respetar el orden en el cual colocamos los elementos en html colocarlos de igual manera en el css
+*/
+/*
+        Colores HEXADECIMALES
+    alfabetos: a b c d e ....
+    alfabeto numeral 0 1 2 3 4 5 6 7 8 9 0
+    binario 0 y 1
+el alfabeto hexadecimal esta conformador por la combinacion del alfabeto numeral y nuestro alfabeto.
+En el caso de los hexadecimal tenemos 6 posiciones las 2 primeras representan al rojo las siguientes 2 al verde y las ultimas al azul
+-- -- --
+rr gg bb 
+el 0 vendria siendo el color mas oscuro y la F el color mas claro
+en rgb() se repsenta el color mas oscuro es 0 y el mas claro es 255
+0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
+Para poder seleccionar clases Se utiliza punto y el numbre de la clase (.Titlo)
+para seleccionar los elementos por ID se utiliza # y el numbre de la id (#parrafo)
+*/
+body{
+    
+}
+.titulo-principal{
+    padding-left: 30px;
+}
+#banner{
+width: 100%;
+}
+.principal{
+    background: #cccccc;
+    padding: 20px;
+}
+.titulo-centralizado{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+    font-size: 20px;
+}
+em strong{
+    color: #f00;
+}
+.diferenciales{
+    background: #ffffff;
+    padding:30px;
+}
+h2{
+    text-align: center;
+}
+.item{
+    font-style: italic;
+}
+ul{
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15%;
+}
+.imagenDiferenciales{
+    width: 55%;
+}
+

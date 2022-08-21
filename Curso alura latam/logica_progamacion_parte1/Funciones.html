@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones JavaScript</title>
+</head>
+<body>
+    <h1>Function</h1>
+    <script>
+        //Al declarar una funcion se le asigna un nombre en este caso saltar linea sin un parametro pero con una serie de instrucciones a ejecutar cuando se llame la a esa funcion
+        function saltarLinea(){
+
+            document.write("<br><br><hr><br><br>");
+
+
+        }
+        //Esta funcion tiene un parametro que al se declarado como una variable podemos imprimir o mostar cualquier cosa que nosotros pongamos al llamar la funcion en este caso print ejemplos en las siguientes lineas.
+        function print(frase){
+            document.write("<big>"+(frase)+"</big>");
+            saltarLinea();
+        }
+
+        
+        let year = 2025;
+        print("<img src='https://i.blogs.es/40e1b7/-summer-sp-3-35-43-screenshot/1366_2000.jpeg'>");
+
+        //Esta codigo calcula las edades de 3 pibes randoms durante los años
+        print("Juan tiene: "+ (year-2000)+ " años"); 
+        print("Pedro tiene: "+ (year-1995)+ " años");
+        year = 2030;
+        print("Carlos tiene: "+ (year-2005)+ " años");
+    </script>
+</body>
+</html>

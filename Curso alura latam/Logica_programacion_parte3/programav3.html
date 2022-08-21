@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>programa v3</title>
+</head>
+<body>
+    <canvas width="600" height="400">
+
+    </canvas>
+    <script>
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+        pincel.fillStyle = "grey";
+        pincel.fillRect(0,0,600,400)
+        function exibirAlerta(evento){
+            var x =evento.pageX - pantalla.offsetLeft; //el evento es un parametro el cual pasa el compílador o navegador al momento que hacemos click y lo podemos ver con console.log.Y toma en cuenta todas las cordenadas de la pantalla no solo del elemento canvas.
+            var y =evento.pageY - pantalla.offsetTop; // restamos el resto de la pantalla en el eje y por asi decirlo 
+            console.log(evento);
+            alert(x +","+ y); // nos muestra la posicion en x e y de donde hicimos click 
+        }
+        function dibujarCirculo(evento){
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            pincel.fillStyle = "blue";
+            pincel.beginPath();
+            pincel.arc(x,y,10,0,2*3.14);
+            pincel.fill();
+            console.log(x + ","+ y);
+        }
+         pantalla.onclick = dibujarCirculo; //no pasamos parametro porque la funcion onclick es autamatica del navegador y de forma automatica nos pasa todos los parametros del "evento" y lo podemos ver en la consola de desarrollador.
+    </script>
+    <!--Para asociar la función con el evento onclick, le pasamos la función sin los paréntesis y sin ningún parámetro. Lo que nuestro navegador está haciendo entre bastidores es cargar la función en el compilador y cada vez que el usuario hace clic en la pantalla, la función es ejecutada y recibe como parámetro algunas propiedades y características del evento que luego aprovechamos para extraer las coordenadas.--->
+</body>
+</html>

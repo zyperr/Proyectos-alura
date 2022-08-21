@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<canvas width="600" height="400"> </canvas>
+<body>
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    var colores = ["blue","green","red"];
+    var cambiarColor = 0;
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400);
+
+    function dibujarCirculo(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        
+        pincel.fillStyle = colores[cambiarColor]; // llamamos a la variable color y tomamos como paramaetro la variable cambiarColor que es igual a 0[azul en el array].
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+    }
+    
+    function alterarColor(){
+        cambiarColor++ // le sumamos 1 a la variable cambiar menor
+        if(cambiarColor > 2){ // cuando la variable cambiarColor sea mayor el if entra en el bloque y lo iguala a 0 cada 
+            cambiarColor = 0;
+        }
+        alert(colores[cambiarColor]);
+        return false
+        
+    }
+    pantalla.oncontextmenu = alterarColor; // cada vez que hacemos click derecho le indicamos a la funcion que sume 1 a la variable cambiarColor cuando esta sea mayor a 2 se iguala a 0 y vuelve a comenzar.
+    pantalla.onclick = dibujarCirculo;
+</script> 
+</body>
+</html>

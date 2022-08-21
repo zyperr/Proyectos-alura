@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa</title>
+</head>
+<body>
+    <h1>Programa - Calcular puntos de un equipo de futbol</h1>
+    <script>
+        function jump(){
+            document.write("<br><br>");
+        }
+        function print(sentence){
+            document.write(sentence);
+            jump();
+        }
+
+        let victorias = parseInt(prompt("Ingrese la cantidad de victorias de su equipo de futbol")); 
+        let empates = parseInt(prompt("Ingrese la cantidad de empates"));
+
+        puntosTotales = (victorias * 3 )+ empates; 
+        print("El total de puntos del equipo es "+ puntosTotales);
+    </script>
+    <!----Conclucion 
+        Prompt es un tipo de dato string si le ingresamos un numero lo transforma a string para poder arreglar esto se usa la funcion parseInt(texto) lo cual transforma un dato string a numero de lo contrario si se intenta transformar un tipo de dato string a numero esto no se podra ya que solo funciona con numeros si lo intentamos nos imprimira NaN(Not a number);-->
+
+</body>
+</html>

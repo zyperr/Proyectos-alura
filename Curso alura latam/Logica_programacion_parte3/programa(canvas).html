@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizando canvas</title>
+</head>
+<body>
+    <canvas  width="600" height="400">
+
+    </canvas>
+    <script>
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d"); //esta variable se encarga de graficar o dibujar tomanto todo el contenido de la variable pantalla con la funcion .getContext en la cual le indicamos que vamos a tomar los ejes x e y de la pantalla (un plano de 2 dimensiones).
+        pincel.fillStyle = "rgb(235,235,235)"; // A difrencia de .fillRect que es una funcion .fillStyle es una propiedad o caracteristica dentro de la propiedad se define el color que usa nuestro pincel para "pintar la pantalla".
+        pincel.fillRect(0,0,600,400); //la funcion .fillrect tiene 4 parametros la primera es la posicion inicial en x y el segundo es en el eje y despues los otros 2 parametros son el amcho y alto que le asignamos a nuestro canvas. 
+        pincel.fillStyle = "rgb(55,100,200)"; // lados
+        pincel.fillRect(0,0,200,400);
+        pincel.fillStyle = "rgb(55,100,200)"; // lados 
+        pincel.fillRect(400,0,200,400);
+
+        pincel.fillStyle = "rgb(210,210,100)";
+        pincel.beginPath(); // la funcion .beginPath comienza un nuevo camino haciendo que nuestro pincel pase por otros lugares de nuestro canvas
+        pincel.moveTo(300,200); // le indicamos donde se tiene que mover
+        pincel.lineTo(200,400);
+        pincel.lineTo(400,400);
+        pincel.fill();
+
+        pincel.fillStyle = "yellow";
+        pincel.beginPath();
+        pincel.arc(300,200,50,0,2*3.14); // le indicamos a canvas que vamos a dibujar una circunferencia con los siguientes parametros la posicion inicial y el tamaño de nuestro circulo en radios el angulo inicial de nuestro ciruclo y el  angulo final de nuestro ciruclo en este caso 2*3.14(numero pi);
+        pincel.fill();
+    </script>
+<!----Canvas vendria siendo como una pizarra donde nosotros podemos dibujar graficos o simplemente dibujar.
+    Podemos encontrar mas funcioens en la documentacion de canvas en google buscando 2d canvas funciones o algo asi.
+-->
+</body>
+</html>

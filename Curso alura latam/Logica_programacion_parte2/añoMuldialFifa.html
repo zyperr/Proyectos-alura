@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proximos muldiales</title>
+</head>
+<body>
+    <h1>Programa año mundial fifa</h1>
+    <script>
+        function br(){
+            document.write("<br><hr>")
+        }
+        function print(sentence){
+            document.write(sentence);
+            br();
+        }
+        let añoMundial= 1930;
+        let  limite = parseInt(prompt("Ingrese el año limite para calcular"));
+        while(añoMundial <= limite){
+            añoMundial +=4;
+            print("Hubo mundial de la fifa en el año " + añoMundial);
+        }
+        alert("fin");
+
+        /*
+            En el caso de que se quiera calcular desde el primer mundial hasta el ultimo el programador tendria que copiar su codigo hasta un cierto numero de veces pero para simplificar esto existen los loops que son iteraciones de codigo osea repetir el codigo en funcion de una condicion .En caso de que la condicion sea false no entrara al bucle.
+        */
+    </script>
+</body>
+</html>

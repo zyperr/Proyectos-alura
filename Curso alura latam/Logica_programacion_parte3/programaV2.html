@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizando canvas</title>
+</head>
+<body>
+    <canvas  width="600" height="400">
+
+    </canvas>
+    <script>
+        /*pincel.fillStyle = "grey";
+        pincel.fillRect(0,0,50,50);
+        pincel.strokeStyle = "black"; // definimos bordes a nuestro cuadrado para poder diferenciarlos mejor.
+        pincel.strokeRect(0,0,50,50); // debe de tener las mismas propiedades que fillRect.En esta parte de la unidad optimizamos mas nuestro codigo para que no sea tan largo.*/
+        function dibujarCuadrado(x,y,color,altura){ // le asignamos 3 variables para poder tomarlas encuenta al llamar a nuestra funcion remplazando los valores de fillRect y demas por las variables puestas como parametro de la funcion.
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+            pincel.fillStyle = color; // llamamos a la variable color
+            pincel.fillRect(x,y,50,altura); // definimos variable x e y para los respectivos ejes del canvas
+            pincel.strokeStyle = color;
+            pincel.strokeRect(x,y,50,altura);
+        }
+        var x = 0;
+        while(x < 600){
+            dibujarCuadrado(x,0,"red");
+            dibujarCuadrado(x,0,"yellow");
+            dibujarCuadrado(x,0,"green");
+            x = x + 50;
+        }
+    </script>
+
+</body>
+</html>

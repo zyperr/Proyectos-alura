@@ -1,0 +1,57 @@
+<!---Para el maxi del futuro IMC es el indice de masa corporal que es una ponderacion entre la altura y el peso de la persona, hay una tabla que indica si la persona esta en sobrepeso o en peso ideal etc---->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de adivinanzas</title>
+</head>
+<body>
+    <h1>Juego de adivinanzas"</h1>
+    <hr>
+    <script>
+        //Las funciones normalmente son creadas para retonar un valor la funcion espera un input procesa y devuelve un output no es recomendable darles mas instrucciones a una funcion, si no es necesario.
+        function br(){
+            document.write("<br><hr>")
+        }
+        function print(sentence){
+            document.write(sentence);
+            br();
+        }
+
+        var numeroPensado = Math.round(Math.random()*10);
+        
+        var contador =1;
+        const intentos = 3;
+
+        while(contador <= intentos){
+            var numeroLanzado = parseInt(prompt("ingrese un numero entre 0-10"));
+            if (numeroPensado == numeroLanzado){
+            alert("Hacerto 😎! en el intento " + contador +" el numero pensado era " + numeroPensado);
+            break; //Break corta el while si este es verdadero haci no se vuelve a repetir 
+        }
+        else{
+            alert("Le pifiaste pa");
+        }
+        contador++;
+        }
+
+
+
+        if (numeroPensado == numeroLanzado){
+            print("Hacerto 😎! en el intento " +contador +" el numero pensado era " + numeroPensado);
+        }
+        else{
+            print("no era el numero pensado, el numero pensado era " + numeroPensado);
+        }
+        print("fin");
+
+
+
+
+        //Si utilizamos else no hace falta que se le ingrese un parametro ya que internamente javascript sabe que si no se cumple la condicion de if (If da como resultado false)pasa a ejecutar las instrucciones dentro del bloque  else
+    </script>
+    <!----Para que nuestro numeroPensado sea un numero random necesitamos usar la funcion o propiedad Math.random() ya que este pequeño juego de adivinanzas es poco "inteligente" para mejorarlo necesitamos usar lo antes mencionado --->
+</body>
+</html>

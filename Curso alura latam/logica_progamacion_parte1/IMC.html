@@ -1,0 +1,38 @@
+<!---Para el maxi del futuro IMC es el indice de masa corporal que es una ponderacion entre la altura y el peso de la persona, hay una tabla que indica si la persona esta en sobrepeso o en peso ideal etc---->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de IMC</title>
+</head>
+<body>
+    <h1>Programa para calcular el IMC</h1>
+    <hr>
+    <script>
+        //Las funciones normalmente son creadas para retonar un valor la funcion espera un input procesa y devuelve un output no es recomendable darles mas instrucciones a una funcion, si no es necesario.
+        function br(){
+            document.write("<br><hr>")
+        }
+        function print(sentence){
+            document.write(sentence);
+            br();
+        }
+        function calcularImc(peso,altura){
+            return (peso/(altura*altura)); //retorna el valor de la variable imc tambien podemos returnar el calculo directamente ejemplo return (peso /(altura*altura));
+        }
+        //Le asignamos los valores en orden y se imprimen en pantalla mostraron lo que la funcion print indica. 
+        let maxi = calcularImc(71,1.72); 
+        let pepe = calcularImc(111,1.82);
+        print("El promedio del imc calculado entre Maxi y Pepe es: "+ (maxi+pepe)/2);
+
+
+        nombre = prompt("Ingrese su nombre");
+        pesoInformado= prompt(nombre+" Informe su peso: ");
+        alturaInformado= prompt(nombre+" Informe su altura: ");
+        imcCalculado = calcularImc(pesoInformado,alturaInformado)
+        print(nombre +" su imc calculado es: "+ imcCalculado);
+    </script>
+</body>
+</html>
